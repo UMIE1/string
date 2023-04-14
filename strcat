@@ -1,0 +1,29 @@
+//my_strcat
+
+char *my_strcat(char * dest,const char *src)
+{
+	assert(dest != NULL);
+	assert(src != NULL);
+	char* ret = dest;
+	
+	while (*dest!='\0')
+	{
+		dest++;
+	}
+	
+	while (*dest++ = *src++)
+	{
+		;
+	}
+	return ret;
+}
+int main()
+{
+	//strcat字符串追加  目的地的字符串数组大小的容量需要够自身和追加的字符串数组的长度之和
+	//从a的\0处开始拷贝，b中的\0也被拷贝进了a中，a中的\0被k覆盖
+	char a[13] = "it will ";
+	char b[] = "kill";	
+	my_strcat(a, b);
+	printf("%s\n", a);
+	return 0;
+}
