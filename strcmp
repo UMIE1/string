@@ -1,0 +1,30 @@
+int my_strcmp(const char *arr1,const char*arr2)
+{
+	//strcmp比较是字符的大小，用arr[0]和arr2[0]相比进行返回，如果相等，比较下一个字符
+	assert(arr1 && arr2);
+	while (*arr1 == *arr2)
+	{
+		if (*arr1 == '\0')
+			return 0;
+		arr1++;
+		arr2++;
+	}
+	if (*arr1 > *arr2)
+		return 1;
+	else
+		return -1;
+}
+int main()
+{
+	char arr1[] = "abcdef";
+	char arr2[] = "abcdef";
+	int ret = my_strcmp(arr1,arr2);
+	if (ret > 0)
+		printf("arr1 big %d\n",ret);
+	else if (ret < 0)
+		printf("arr2 big %d\n",ret);
+	else
+		printf("arr1 same arr2 %d\n",ret);
+	printf("%d\n", strcmp(arr1, arr2));
+	return 0;
+}
