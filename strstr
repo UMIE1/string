@@ -1,0 +1,25 @@
+char* my_strstr(const char*p1,const char*p2)
+{
+	assert(p1 && p2);
+	while (*p1)
+	{
+		if (*p1 != *p2)
+		{
+			p1++;
+		}
+	}
+	char* ret = p1;
+	while (*p1++ == *p2++)
+	{
+		`
+	}
+}
+int main()
+{
+	//strstr（p1,p2）在p1中找有没有p2，如果有返回p1中p2[0]字符的下标，如果没有，返回一个(null)；
+	const char* p1 = "abcdef";
+	const char* p2 = "defd";
+	//printf("%s\n", strstr(p1, p2));
+	printf("%s\n", my_strstr(p1, p2));
+	return 0;
+}
