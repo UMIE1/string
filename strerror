@@ -1,0 +1,15 @@
+//错误信息函数    返回错误码所对应的错误信息
+//strerror  //把错误码翻译成错误信息
+//   strerror(errno)//自动把错误码放到errno中 并显示错误信息 
+// 使用strerror需要使用头文件
+#include<errno.h>
+
+int main()
+{
+	FILE *f =fopen("test.txt", "r");
+	if (f == NULL)
+		printf("%s\n", strerror(errno));
+	else
+		printf("open file success\n");
+	return 0;
+}
